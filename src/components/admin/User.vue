@@ -4,7 +4,7 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>权限管理</el-breadcrumb-item>
-      <el-breadcrumb-item>用户列表</el-breadcrumb-item>
+      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 卡片视图区 -->
     <el-card>
@@ -166,7 +166,7 @@ export default {
         ],
         email: [
           { required: true, message: '请输入邮箱', trigger: 'blur' },
-          { min: 5, max: 15, message: '请输入正确邮箱地址', trigger: 'blur' },
+          { min: 5, max: 20, message: '请输入正确邮箱地址', trigger: 'blur' },
         ],
       },
       // 修改用户表单验证规则
@@ -183,6 +183,7 @@ export default {
     }
   },
   created() {
+    document.title = '欢迎来到用户管理界面'
     this.getUserList()
   },
   methods: {

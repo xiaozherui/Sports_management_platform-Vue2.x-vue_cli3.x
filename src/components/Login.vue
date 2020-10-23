@@ -66,6 +66,10 @@ export default {
       },
     }
   },
+
+  created() {
+    document.title = '运动管理平台-登录界面'
+  },
   methods: {
     //重置登录表单内容
     resetLoginForm() {
@@ -93,7 +97,7 @@ export default {
           window.sessionStorage.setItem('flag', 'ok') // session 放置
           this.$message.success('登陆成功！！！')
           this.$router.push({ path: '/home' }) //前端路由跳转
-          window.sessionStorage.setItem('user',res.user)//存储当前登录用户的user对象
+          window.sessionStorage.setItem('user', res.user) //存储当前登录用户的user对象
           console.log(res.user)
         } else {
           this.$message.error('登录失败！！！')

@@ -10,19 +10,25 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/',
+    redirect: '/login'
+    
+  },
+  {
     path: '/success',
-    component: success
+    component: success,
   },
   {
     path: '/login',
-    component: Login
+    component: Login,
   },
   {
     path: '/home',
     component: Home,
-    redirect: '/welcome',
     children: [
-      { path:'/welcome', component: Welcome},{ path:'/user', component: User}
+      { path:'' , redirect: '/user'},
+      { path:'/welcome', component: Welcome},
+      { path:'/user', component: User}
     ],
   },
 ]
